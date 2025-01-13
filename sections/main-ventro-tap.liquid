@@ -1,0 +1,520 @@
+<style>
+  #visiting-card-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .card-container {
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    height: 100%;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    height: 200px;
+  }
+  .card-header h2 {
+    text-align: center;
+    color: #333;
+    width: 40%;
+  }
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    padding: 1rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 100%;
+    justify-content: center;
+    padding-left: 2rem;
+  }
+  .card-details span,
+  .card-details p {
+    color: white;
+    margin: 0;
+  }
+
+  .card-links {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .card-links a {
+    color: #1e88e5;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #eaeaea;
+  }
+  .card-links > a {
+    text-align: center;
+  }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-info a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .skeleton {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    animation: shimmer 1.5s infinite linear;
+  }
+  .skeleton-text {
+    height: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .skeleton-circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex !important;
+    background-color: #e0e0e0;
+  }
+  .skeleton-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+    background-color: #f9f9f9;
+    gap: 1rem;
+    height: 100vh;
+  }
+  .skeleton-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .skeleton-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .skeleton-links {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  .skeleton-links .skeleton-circle {
+    background-color: #e0e0e0;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+  .skeleton.skeleton-text {
+    display: block !important;
+  }
+
+  .error-container {
+    text-align: center;
+    color: #f44336;
+    font-size: 16px;
+    padding: 20px;
+
+    background-color: #ffeaea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 250px;
+    justify-content: center;
+  }
+  .error-container img {
+    height: 40px;
+    width: 40px;
+  }
+  .error-container p {
+    margin: 0;
+    font-size: 18px;
+  }
+  .card-derails-name {
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 1.5rem !important;
+  }
+  .card-derails-comapny,
+  .card-derails-job {
+    font-size: 18px !important;
+    color: #9e9e9e !important;
+    line-height: 1.2 !important;
+  }
+
+  .card-inforamtions-button {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .card-inforamtions-button button {
+    background-color: #000000;
+    color: #fbfbfb;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    height: 50px;
+    min-width: 50%;
+    font-size: 20px;
+  }
+  .card-derails-comapny-bio {
+    margin: 0px !important;
+    color: rgb(121 121 121);
+    font-size: 16px;
+  }
+  .card-container-top {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    box-shadow: 0px 11px 1.5rem -9px rgba(37, 37, 37, 0.1);
+  }
+  .card-header-logo {
+    color: #070707;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 650px) {
+    .card-derails-name {
+      font-size: 30px !important;
+    }
+    .card-derails-comapny,
+    .card-derails-job {
+      font-size: 16px !important;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .card-derails-name {
+      font-size: 24px !important;
+    }
+    .card-derails-comapny,
+    .card-derails-job {
+      font-size: 14px !important;
+    }
+    .card-header img {
+      height: 100%;
+      width: 150px !important;
+    }
+  }
+</style>
+
+<div id="visiting-card-container">
+  <div class="skeleton-card">
+    <div class="skeleton-header">
+      <div class="skeleton-circle"></div>
+      <div class="skeleton-details">
+        <div class="skeleton skeleton-text" style="width: 70%; height: 24px;"></div>
+        <div class="skeleton skeleton-text" style="width: 50%; height: 20px;"></div>
+        <div class="skeleton skeleton-text" style="width: 50%; height: 20px;"></div>
+      </div>
+    </div>
+    <div class="skeleton-links">
+      <div class="skeleton-circle"></div>
+      <div class="skeleton-circle"></div>
+      <div class="skeleton-circle"></div>
+      <div class="skeleton-circle"></div>
+    </div>
+    <div class="skeleton-details">
+      <div class="skeleton skeleton-text" style="width: 90%;"></div>
+      <div class="skeleton skeleton-text" style="width: 90%;"></div>
+      <div class="skeleton skeleton-text" style="width: 90%;"></div>
+      <div class="skeleton skeleton-text" style="width: 90%;"></div>
+    </div>
+  </div>
+</div>
+<script>
+  function generateVCard(data) {
+    console.log('data', data);
+    const {
+      name,
+      bio,
+      jobTitle,
+      company,
+      email,
+      secondaryEmail,
+      phoneNumber,
+      secondaryPhoneNumber,
+      website,
+      secondaryWebsite,
+      linkedin,
+      facebook,
+      instagram,
+      twitter,
+      snapchat,
+      profileImage,
+    } = data;
+    console.log('profileImage', profileImage);
+    const vCardContent = `
+BEGIN:VCARD
+VERSION:3.0
+FN:${name || ''}
+TITLE:${jobTitle || ''}
+ORG:${company || ''}
+EMAIL;TYPE=INTERNET:${email || ''}
+EMAIL;TYPE=INTERNET:${secondaryEmail || ''}
+TEL;TYPE=CELL:${phoneNumber || ''}
+TEL;TYPE=CELL:${secondaryPhoneNumber || ''}
+URL;TYPE=Website:${website || ''}
+URL;TYPE=Website:${secondaryWebsite || ''}
+URL;TYPE=LinkedIn:${linkedin || ''}
+URL;TYPE=Facebook:${facebook || ''}
+URL;TYPE=Instagram:${instagram || ''}
+URL;TYPE=Twitter:${twitter || ''}
+URL;TYPE=Snapchat:${snapchat || ''}
+PHOTO;TYPE=URL;VALUE=URI:${profileImage || ''}
+NOTE;ENCODING=QUOTED-PRINTABLE;CHARSET=UTF-8:${bio || ''}
+END:VCARD
+`.trim();
+
+    const blob = new Blob([vCardContent], { type: 'text/vcard' });
+    const vCardUrl = URL.createObjectURL(blob);
+
+    // Open the vCard URL to directly access contacts
+    window.location.href = vCardUrl;
+  }
+
+  function getQueryParam() {
+    const path = window.location.pathname;
+    const lastSegment = path.substring(path.lastIndexOf('/') + 1);
+    return lastSegment;
+  }
+
+  const token = getQueryParam();
+  console.log('token', token);
+  const container = document.getElementById('visiting-card-container');
+
+  function renderContent(html) {
+    container.innerHTML = html;
+  }
+
+  function createErrorHTML(message, iconUrl) {
+    return `
+      <div class="card-container">
+        <div class="error-container">
+          <span>{{- "icon-error-2.svg" | inline_asset_content -}}</span>
+          <p>${message}</p>
+        </div>
+      </div>
+    `;
+  }
+
+  function createVisitingCardHTML(data) {
+    console.log('data', data);
+    const {
+      name,
+      bio,
+      jobTitle,
+      profileImage,
+      company,
+      email,
+      secondaryEmail,
+      phoneNumber,
+      secondaryPhoneNumber,
+      website,
+      secondaryWebsite,
+      linkedin,
+      facebook,
+      instagram,
+      tiktok,
+      twitter,
+      snapchat,
+      fieldIsVisible,
+      isActive,
+    } = data;
+    if (!isActive) {
+      return `
+      <div class="card-container">
+        <div class="error-container">
+          <p>This visiting card is not active.</p>
+        </div>
+      </div>
+    `;
+    }
+
+    const fieldTemplate = (isVisible, value, type, icon) => {
+      if (!isVisible || !value) return '';
+      const href = type === 'email' ? `mailto:${value}` : `tel:${value}`;
+      return `
+        <div style="display: flex; gap: 5px;">
+          <span style="color: black; margin-right: 5px;">${icon}</span>
+          <a href="${href}" style="color: black; text-decoration:none; line-height:1.2;">${value}</a>
+        </div>
+      `;
+    };
+
+    const socialLinkTemplate = (isVisible, url, icon) => {
+      if (!isVisible || !url) return '';
+      return `<a href="${url}" target="_blank">${icon}</a>`;
+    };
+
+    return `
+      <div class="card-container">
+        <a href="{{ routes.root_url }}" style="text-decoration: none; height: 40px;">
+          <div class="card-header-logo">
+            <img src="{{- "ventro-logo.png" | asset_url -}}" alt="logo" style="height: 40px; cursor: pointer;" />
+          </div>
+        </a>
+
+      <div class='card-container-top'>
+        <div class="card-header">
+          ${
+            fieldIsVisible.isProfileImage && profileImage
+              ? `<img src="${profileImage}" alt="Profile Image" style="width: 200px; height: 100%;">`
+              : `<span>'{{- "icon-user.svg" | inline_asset_content -}}'</span>`
+          }
+            <div class="card-details">
+              ${fieldIsVisible.isName ? `<span class='card-derails-name'>${name}</span>` : ''}
+              ${fieldIsVisible.isJobTitle ? `<p class='card-derails-job'>${jobTitle}</p>` : ''}
+              ${fieldIsVisible.isCompany ? `<p  class='card-derails-comapny'>${company}</p>` : ''}
+            </div>
+        </div>
+         <div class='card-inforamtions-button'>
+           <button id="save-contact-button">Save Contact</button>
+         </div>
+      </div>
+        
+      
+        <div class=card-inforamtions-bio>
+        ${fieldIsVisible.isBio ? `<p  class='card-derails-comapny-bio' >${bio}</p>` : ''}
+        </div>
+        <div class="card-links">
+          ${socialLinkTemplate(fieldIsVisible.isWebsite, website, '{{- "icon-website.svg" | inline_asset_content -}}')}
+          ${socialLinkTemplate(
+            fieldIsVisible.isSecondaryWebsite,
+            secondaryWebsite,
+            '{{- "icon-website.svg" | inline_asset_content -}}'
+          )}
+          ${socialLinkTemplate(
+            fieldIsVisible.isLinkedin,
+            linkedin,
+            '{{- "icon-linkedin.svg" | inline_asset_content -}}'
+          )}
+          ${socialLinkTemplate(
+            fieldIsVisible.isFacebook,
+            facebook,
+            '{{- "icon-facebook-2.svg" | inline_asset_content -}}'
+          )}
+          ${socialLinkTemplate(
+            fieldIsVisible.isInstagram,
+            instagram,
+            '{{- "icon-instagram-2.svg" | inline_asset_content -}}'
+          )}
+          ${socialLinkTemplate(fieldIsVisible.isTiktok, tiktok, '{{- "icon-ticktok.svg" | inline_asset_content -}}')}
+          ${socialLinkTemplate(
+            fieldIsVisible.isTwitter,
+            twitter,
+            '{{- "icon-twitter-2.svg" | inline_asset_content -}}'
+          )}
+          ${socialLinkTemplate(
+            fieldIsVisible.isSnapchat,
+            snapchat,
+            '{{- "icon-snapchat-2.svg" | inline_asset_content -}}'
+          )}
+        </div>
+        <div class="contact-info">
+          ${fieldTemplate(fieldIsVisible.isEmail, email, 'email', '{{- "icon-mailbox.svg" | inline_asset_content -}}')}
+          ${fieldTemplate(
+            fieldIsVisible.isSecondaryEmail,
+            secondaryEmail,
+            'email',
+            '{{- "icon-mailbox.svg" | inline_asset_content -}}'
+          )}
+          ${fieldTemplate(
+            fieldIsVisible.isPhoneNumber,
+            phoneNumber,
+            'phone',
+            '{{- "icon-phone.svg" | inline_asset_content -}}'
+          )}
+          ${fieldTemplate(
+            fieldIsVisible.isSecondaryPhoneNumber,
+            secondaryPhoneNumber,
+            'phone',
+            '{{- "icon-phone.svg" | inline_asset_content -}}'
+          )}
+        </div>
+      </div>
+    `;
+  }
+
+  if (token) {
+    fetch(`https://nfctap.ventro.shop/api/customer/getCustomer/${token}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch data.');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data) {
+          // renderContent(createVisitingCardHTML(data));
+          renderContent(createVisitingCardHTML(data));
+
+          const saveContactButton = document.getElementById('save-contact-button');
+          if (saveContactButton) {
+            saveContactButton.addEventListener('click', () => {
+              generateVCard(data);
+            });
+          }
+        } else {
+          renderContent(createErrorHTML('Sorry, the visiting card could not be found.'));
+        }
+      })
+      .catch((error) => {
+        renderContent(createErrorHTML('Error fetching data. Please try again later.'));
+      });
+  } else {
+    renderContent(createErrorHTML('No token provided in the URL.'));
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Ventro tap",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Add a title",
+      "default": "Ventro tap"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ventro tap"
+    }
+  ]
+}
+{% endschema %}

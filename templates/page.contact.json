@@ -1,0 +1,192 @@
+{
+  "sections": {
+    "main": { "type": "main-page", "disabled": true, "settings": { "padding_top": 36, "padding_bottom": 36 } },
+    "7ccb49c4-4af7-4680-9a0a-4ec68ff8c320": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17170453201173__7ccb49c4-4af7-4680-9a0a-4ec68ff8c320-1670685165f4c7bc8c-0": {
+          "type": "heading",
+          "settings": { "heading": "Location", "heading_size": "h1" }
+        },
+        "template--17170453201173__7ccb49c4-4af7-4680-9a0a-4ec68ff8c320-1670685165f4c7bc8c-1": {
+          "type": "text",
+          "settings": { "text": "<p>Level 10-A, House 21, Road 17, Banani, Dhaka 1213, Bangladesh</p>" }
+        },
+        "template--17170453201173__7ccb49c4-4af7-4680-9a0a-4ec68ff8c320-1670685165f4c7bc8c-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "View on Google maps",
+            "button_link": "https://www.google.com/search?q=ventro&rlz=1C5CHFA_enBD1034BD1035&oq=ventro&aqs=chrome..69i57j0i10i131i433i512j0i512l2j69i60l3j69i65.3185j0j4&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALiCzsaFM-WFJ6UWrw5oFJK4HUPO9YhdYQ:1670687401646&rflfq=1&num=10&rldimm=17774473617036689861&lqi=CgZ2ZW50cm9IxfDKree3gIAIWgwQABgAIgZ2ZW50cm-SARlmYXNoaW9uX2FjY2Vzc29yaWVzX3N0b3JlqgEOEAEqCiIGdmVudHJvKAA&ved=2ahUKEwir-uvIs-_7AhVq3jgGHYq3A3MQvS56BAgSEAE&sa=X&rlst=f#rlfi=hd:;si:17774473617036689861,l,CgZ2ZW50cm9IxfDKree3gIAIWgwQABgAIgZ2ZW50cm-SARlmYXNoaW9uX2FjY2Vzc29yaWVzX3N0b3JlqgEOEAEqCiIGdmVudHJvKAA;mv:[[55.5020415,96.10659369999999],[15.3330962,-9.77]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--17170453201173__7ccb49c4-4af7-4680-9a0a-4ec68ff8c320-1670685165f4c7bc8c-0",
+        "template--17170453201173__7ccb49c4-4af7-4680-9a0a-4ec68ff8c320-1670685165f4c7bc8c-1",
+        "template--17170453201173__7ccb49c4-4af7-4680-9a0a-4ec68ff8c320-1670685165f4c7bc8c-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "6904f244-b2b2-4e34-b80f-1744504995fc": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17170453201173__6904f244-b2b2-4e34-b80f-1744504995fc-1670781479a8f1fce2-0": {
+          "type": "heading",
+          "settings": { "heading": "Phone number", "heading_size": "h1" }
+        },
+        "template--17170453201173__6904f244-b2b2-4e34-b80f-1744504995fc-1670781479a8f1fce2-1": {
+          "type": "text",
+          "settings": { "text": "<p>+88 017 1770 7285</p>" }
+        },
+        "template--17170453201173__6904f244-b2b2-4e34-b80f-1744504995fc-1670781479a8f1fce2-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Call Now",
+            "button_link": "tel:+8801717707285",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--17170453201173__6904f244-b2b2-4e34-b80f-1744504995fc-1670781479a8f1fce2-0",
+        "template--17170453201173__6904f244-b2b2-4e34-b80f-1744504995fc-1670781479a8f1fce2-1",
+        "template--17170453201173__6904f244-b2b2-4e34-b80f-1744504995fc-1670781479a8f1fce2-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "a6f9b63c-b652-4793-bc00-a6532ec2f54c": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17170453201173__a6f9b63c-b652-4793-bc00-a6532ec2f54c-1670781479a8f1fce2-0": {
+          "type": "heading",
+          "settings": { "heading": "E-mail", "heading_size": "h1" }
+        },
+        "template--17170453201173__a6f9b63c-b652-4793-bc00-a6532ec2f54c-1670781479a8f1fce2-1": {
+          "type": "text",
+          "settings": { "text": "<p>support@ventro.shop</p>" }
+        },
+        "template--17170453201173__a6f9b63c-b652-4793-bc00-a6532ec2f54c-1670781479a8f1fce2-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Send mail",
+            "button_link": "mailto:support@ventro.shop",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--17170453201173__a6f9b63c-b652-4793-bc00-a6532ec2f54c-1670781479a8f1fce2-0",
+        "template--17170453201173__a6f9b63c-b652-4793-bc00-a6532ec2f54c-1670781479a8f1fce2-1",
+        "template--17170453201173__a6f9b63c-b652-4793-bc00-a6532ec2f54c-1670781479a8f1fce2-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "9990d10a-b8f6-4fcc-8c83-ea321d86c582": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17170453201173__9990d10a-b8f6-4fcc-8c83-ea321d86c582-1670685165f4c7bc8c-0": {
+          "type": "heading",
+          "settings": { "heading": "Follow us on", "heading_size": "h1" }
+        },
+        "template--17170453201173__9990d10a-b8f6-4fcc-8c83-ea321d86c582-1670685165f4c7bc8c-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Facebook",
+            "button_link": "https://facebook.com/ventro.shop",
+            "button_style_secondary": false,
+            "button_label_2": "Instagram",
+            "button_link_2": "https://instagram.com/ventro.shop",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--17170453201173__9990d10a-b8f6-4fcc-8c83-ea321d86c582-1670685165f4c7bc8c-0",
+        "template--17170453201173__9990d10a-b8f6-4fcc-8c83-ea321d86c582-1670685165f4c7bc8c-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "fa8b3c1d-f3b5-42a6-9043-979e9ff0c2be": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17170453201173__fa8b3c1d-f3b5-42a6-9043-979e9ff0c2be-1670685165f4c7bc8c-0": {
+          "type": "heading",
+          "settings": { "heading": "Any questions?", "heading_size": "h1" }
+        },
+        "21a739e0-50a0-4fc4-be12-a3192d3edf8d": {
+          "type": "caption",
+          "settings": { "caption": "Let us know!", "text_style": "caption-with-letter-spacing", "text_size": "medium" }
+        }
+      },
+      "block_order": [
+        "template--17170453201173__fa8b3c1d-f3b5-42a6-9043-979e9ff0c2be-1670685165f4c7bc8c-0",
+        "21a739e0-50a0-4fc4-be12-a3192d3edf8d"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "7ccb49c4-4af7-4680-9a0a-4ec68ff8c320",
+    "6904f244-b2b2-4e34-b80f-1744504995fc",
+    "a6f9b63c-b652-4793-bc00-a6532ec2f54c",
+    "9990d10a-b8f6-4fcc-8c83-ea321d86c582",
+    "fa8b3c1d-f3b5-42a6-9043-979e9ff0c2be",
+    "form"
+  ]
+}

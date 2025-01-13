@@ -1,0 +1,713 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": { "heading": "Upgrade your wallet today!", "heading_size": "hxl" }
+        },
+        "d5f5b5a2-2e98-444e-a6c7-81853d28614e": {
+          "type": "text",
+          "settings": { "text": "THE PIONEERS OF SMART WALLETS IN BANGLADESH!", "text_style": "subtitle" }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": ["heading", "d5f5b5a2-2e98-444e-a6c7-81853d28614e", "button"],
+      "settings": {
+        "image": "shopify://shop_images/Cover.png",
+        "image_overlay_opacity": 30,
+        "image_height": "medium",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_with_text_jryKwy": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nDC9mF": {
+          "type": "heading",
+          "settings": { "heading": "PRE-ORDER NOW (FREE DELIVERY)", "heading_size": "h1" }
+        },
+        "text_3iGwTg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For the unavailable colors, pre-order now and get free delivery all over Bangladesh. Our best efforts will go towards delivering your orders with in week of September.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_KDkmND": {
+          "type": "button",
+          "settings": {
+            "button_label": "PRE-ORDER NOW",
+            "button_link": "https://forms.gle/NQjncPnRZQ761fAX7",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": ["heading_nDC9mF", "text_3iGwTg", "button_KDkmND"],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_25.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "2e787477-2535-439f-890f-61020f70015a": {
+      "type": "collage",
+      "blocks": {
+        "template--19783777419541__2e787477-2535-439f-890f-61020f70015a-image-1": {
+          "type": "image",
+          "settings": { "image": "shopify://shop_images/IMG_4961.heic" }
+        },
+        "template--19783777419541__2e787477-2535-439f-890f-61020f70015a-product-1": {
+          "type": "product",
+          "settings": { "product": "graphite-grey", "second_image": false }
+        },
+        "template--19783777419541__2e787477-2535-439f-890f-61020f70015a-collection-1": {
+          "type": "collection",
+          "settings": { "collection": "alcantara-leather" }
+        }
+      },
+      "block_order": [
+        "template--19783777419541__2e787477-2535-439f-890f-61020f70015a-image-1",
+        "template--19783777419541__2e787477-2535-439f-890f-61020f70015a-product-1",
+        "template--19783777419541__2e787477-2535-439f-890f-61020f70015a-collection-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "New Arrivals",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage_tGcfqH": {
+      "type": "collage",
+      "blocks": {
+        "image_YMbJ4M": { "type": "image", "settings": { "image": "shopify://shop_images/Post_1.jpg" } },
+        "product_wyEdMR": { "type": "product", "settings": { "product": "carbon-fiber-3000", "second_image": false } },
+        "collection_MfTXnN": { "type": "collection", "settings": { "collection": "owen-2-0" } }
+      },
+      "block_order": ["image_YMbJ4M", "product_wyEdMR", "collection_MfTXnN"],
+      "disabled": true,
+      "settings": {
+        "heading": "Bestsellers",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_hjfFh4": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "THE OWEN 2.0 (FULL GRAIN LEATHER)",
+        "heading_size": "h1",
+        "description": "<p>Experience timeless elegance and modern functionality with the OWEN 2.0, crafted from premium full-grain leather for the discerning individual.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "owen-2-0-full-grain-leather",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_RBi7T3": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "THE OWEN 2.0 (CRAZY HORSE LEATHER)",
+        "heading_size": "h1",
+        "description": "<p>Embrace rugged charm and durability with the OWEN 2.0, crafted from authentic Crazy Horse leather that ages beautifully over time.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "owen-2-0-crazyhorse-leather",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_eRdbQk": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "iCard (Smart Wallet Finder)",
+        "heading_size": "h1",
+        "description": "<p>Never loose your wallet again.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "electronics",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "03ada74b-317d-4016-8865-b1be46b11069": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<a href=\"/pages/steel-series\" target=\"_blank\" title=\"Steel Series\">The Steel Series</a>",
+        "heading_size": "h1",
+        "description": "<p>A slim, sleek, and stylish metal card holder wallet.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "steel-series-1",
+        "products_to_show": 23,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "c1e83811-6eda-4dbf-9689-019aefa36a3c": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Tools",
+        "heading_size": "h1",
+        "description": "<p>Tools that simply and enhance your everyday carry.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "tools",
+        "products_to_show": 23,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "collection_list_wgrrNK": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_LmcGEX": {
+          "type": "featured_collection",
+          "settings": { "collection": "owen-2-0-full-grain-leather" }
+        },
+        "featured_collection_mnWp7m": { "type": "featured_collection", "settings": { "collection": "electronics" } },
+        "featured_collection_LrGP7Y": { "type": "featured_collection", "settings": { "collection": "multitool" } }
+      },
+      "block_order": ["featured_collection_LmcGEX", "featured_collection_mnWp7m", "featured_collection_LrGP7Y"],
+      "disabled": true,
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "48e171ac-2479-4b7c-8a24-b069749016c6": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--17170453365013__48e171ac-2479-4b7c-8a24-b069749016c6-1674848228295edadd-0": {
+          "type": "heading",
+          "settings": { "heading": "Upgrade Your Everyday Carry!", "heading_size": "h1" }
+        },
+        "template--17170453365013__48e171ac-2479-4b7c-8a24-b069749016c6-1674848228295edadd-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You upgrade your phone, laptop, lifestyle, and everything you use. Buy why does your wallet look like the first wallet ever made? It's time you get an upgrade and move on to a <strong>Ventro</strong>. </p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--17170453365013__48e171ac-2479-4b7c-8a24-b069749016c6-1674848228295edadd-0",
+        "template--17170453365013__48e171ac-2479-4b7c-8a24-b069749016c6-1674848228295edadd-1"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Post_1.jpg",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "0bf79bae-c900-4631-9112-1ba6fd3e623d": {
+      "type": "image-with-text",
+      "blocks": {
+        "582b953d-cb89-42f1-a1b9-04758b69f625": {
+          "type": "heading",
+          "settings": { "heading": "Durable and built for everyday use.", "heading_size": "h1" }
+        },
+        "31d8a7a6-1ed0-46b5-afca-0a2e93dedc7b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Ventro, we use materials that can handle your daily wear and tear. All our products are made with the state of the arc materials and technology. You'll wonder how you ever lived without your Ventro.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["582b953d-cb89-42f1-a1b9-04758b69f625", "31d8a7a6-1ed0-46b5-afca-0a2e93dedc7b"],
+      "settings": {
+        "image": "shopify://shop_images/Post_7.jpg",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "150a9dda-0927-4499-9ebc-ca7d12f53b67": {
+      "type": "image-with-text",
+      "blocks": {
+        "d89926c8-c720-4303-bbe7-860e22e31faa": {
+          "type": "heading",
+          "settings": { "heading": "Slim, Sleek and Stylish", "heading_size": "h1" }
+        },
+        "f83a7a75-5e17-4f92-bad7-9341e24a4dd0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We build quality products that simplify and streamline your daily life. Whether it’s sleek metal wallets, magnetic leather wallets, or computer bags, our minimalist designs provide maximum utility, letting you do more with less.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["d89926c8-c720-4303-bbe7-860e22e31faa", "f83a7a75-5e17-4f92-bad7-9341e24a4dd0"],
+      "settings": {
+        "image": "shopify://shop_images/Steel_series_post_2.jpg",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "83f00b04-f75c-4d95-a3e0-3b06816291e5": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--19783777419541__83f00b04-f75c-4d95-a3e0-3b06816291e5-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What materials are used in Ventro wallets?",
+            "icon": "question_mark",
+            "row_content": "<p>We offer wallets made from <strong>full-grain genuine leather</strong>, <strong>crazy horse genuine leather</strong>, and <strong>microfiber leather</strong>. Each material is carefully selected for its durability, premium feel, and aesthetic appeal.</p>",
+            "page": ""
+          }
+        },
+        "template--19783777419541__83f00b04-f75c-4d95-a3e0-3b06816291e5-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the delivery time and fee?",
+            "icon": "truck",
+            "row_content": "<p><strong>Orders without laser customized laser engraving:</strong></p><p>Inside Dhaka: 24-48 Days (70 Taka)</p><p>Outside Dhaka: 48-72 Hours (130 Taka)</p><p></p><p><strong>Orders out laser customized laser engraving:</strong></p><p>Inside Dhaka: 48-72 hours (70 Taka)</p><p>Outside Dhaka: 72-96 Hours (130 Taka)</p><p><em><strong>N.B: Engraving orders are only processed after full payment is received.</strong></em></p>",
+            "page": ""
+          }
+        },
+        "template--19783777419541__83f00b04-f75c-4d95-a3e0-3b06816291e5-collapsible_row-3": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "Why is the price higher for the genuine leather versions?",
+            "icon": "leather",
+            "row_content": "<p>Genuine leather is more durable, luxurious, and long-lasting compared to artificial leather. The craftsmanship involved in creating these premium wallets justifies the price difference.</p>",
+            "page": ""
+          }
+        },
+        "template--19783777419541__83f00b04-f75c-4d95-a3e0-3b06816291e5-collapsible_row-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the return policy?",
+            "icon": "return",
+            "row_content": "<p>You can return the product by paying the delivery charge only. </p><p>Returns and refunds will not be issued if their blue sticker is peeled off of the magnetic strip.  </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8Yqn97": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the engraving charges?",
+            "icon": "ruler",
+            "row_content": "<p>Engraving charges are as follows:</p><ul><li><strong>Single Position</strong>: 250 Taka</li><li><strong>Additional Positions</strong>: 200 Taka per position</li></ul><p>Simply provide your design in a <strong>transparent PNG format</strong> for customization.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MLyzzb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why do you require full payment for engraving orders?",
+            "icon": "price_tag",
+            "row_content": "<p>We require <strong>full advance payment</strong> because engraved products are personalized and cannot be returned, exchanged, or refunded once customized.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_mN3nwX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I charge the iCard?",
+            "icon": "lightning_bolt",
+            "row_content": "<p>The latest iCard model now features wireless charging, along with all its advanced tracking features, making it even more convenient.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pMiNrA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where is Ventro located?",
+            "icon": "map_pin",
+            "row_content": "<p>Our physical store is located at:<br/><strong>Bashati Horizon, </strong>Level 10-A, House 21, Road 17<br/>Banani, Dhaka 1213<br/>We’re directly opposite the Unique Regency/Arabika building</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19783777419541__83f00b04-f75c-4d95-a3e0-3b06816291e5-collapsible_row-1",
+        "template--19783777419541__83f00b04-f75c-4d95-a3e0-3b06816291e5-collapsible_row-2",
+        "template--19783777419541__83f00b04-f75c-4d95-a3e0-3b06816291e5-collapsible_row-3",
+        "template--19783777419541__83f00b04-f75c-4d95-a3e0-3b06816291e5-collapsible_row-4",
+        "collapsible_row_8Yqn97",
+        "collapsible_row_MLyzzb",
+        "collapsible_row_mN3nwX",
+        "collapsible_row_pMiNrA"
+      ],
+      "settings": {
+        "caption": "Frequently Asked Questions",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "3786489d-8fea-4b02-8adf-d45ce7b71b9b": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--17170453365013__3786489d-8fea-4b02-8adf-d45ce7b71b9b-167510855758f3d478-0": {
+          "type": "column",
+          "settings": {
+            "title": "Cash On Delivery (COD)",
+            "text": "<p>Order now, pay later. Enjoy a seamless shopping experience with Ventro's Cash on Delivery option. </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "aafc0086-52ad-4475-961a-804cd5a84cc8": {
+          "type": "column",
+          "settings": {
+            "title": "Easy Returns",
+            "text": "<p>Not satisfied with the quality? Just pay the delivery charge and return it to our delivery personnel—no additional/hidden charge.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--17170453365013__3786489d-8fea-4b02-8adf-d45ce7b71b9b-167510855758f3d478-1": {
+          "type": "column",
+          "settings": {
+            "title": "Door Step Delivery",
+            "text": "<p>Enjoy the convenience of shopping from the comfort of your own home, with delivery to any location in Bangladesh within 72 hours.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17170453365013__3786489d-8fea-4b02-8adf-d45ce7b71b9b-167510855758f3d478-0",
+        "aafc0086-52ad-4475-961a-804cd5a84cc8",
+        "template--17170453365013__3786489d-8fea-4b02-8adf-d45ce7b71b9b-167510855758f3d478-1"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "d6170783-6019-431a-805e-56377a7e8e4b": {
+      "type": "slideshow",
+      "blocks": {
+        "6ace5e64-6516-4847-8f82-e84ebc9d0e9c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/1_1e5f1588-3893-4dd7-b8ae-9e1c0314ba97.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "3d292e62-6de5-4fb8-83a3-05111c8579f3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/15.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "cd80ae6a-ecc7-4fa7-91f0-e78b2a118e2c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/12.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "3a74d827-92ba-40a8-b43f-265a684e2323": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/4_cac8d179-d9f7-4476-a4bd-6fec1abddf47.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "2fe116c3-f9c2-4713-90b8-b163550b8b61": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Bulk_1_Bulk_1_1920_x_1080_px.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "6ace5e64-6516-4847-8f82-e84ebc9d0e9c",
+        "3d292e62-6de5-4fb8-83a3-05111c8579f3",
+        "cd80ae6a-ecc7-4fa7-91f0-e78b2a118e2c",
+        "3a74d827-92ba-40a8-b43f-265a684e2323",
+        "2fe116c3-f9c2-4713-90b8-b163550b8b61"
+      ],
+      "settings": {
+        "layout": "grid",
+        "slide_height": "medium",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "8b1f311d-3f61-43dd-8716-f943799708c5": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Questions? Just ask!",
+        "heading_size": "h1",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/bGN3LLrt-F0",
+        "cover_image": "shopify://shop_images/16_to_9.png",
+        "description": "Ventro-Intro",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "image_with_text_jryKwy",
+    "2e787477-2535-439f-890f-61020f70015a",
+    "collage_tGcfqH",
+    "featured_collection_hjfFh4",
+    "featured_collection_RBi7T3",
+    "featured_collection_eRdbQk",
+    "03ada74b-317d-4016-8865-b1be46b11069",
+    "c1e83811-6eda-4dbf-9689-019aefa36a3c",
+    "collection_list_wgrrNK",
+    "48e171ac-2479-4b7c-8a24-b069749016c6",
+    "0bf79bae-c900-4631-9112-1ba6fd3e623d",
+    "150a9dda-0927-4499-9ebc-ca7d12f53b67",
+    "83f00b04-f75c-4d95-a3e0-3b06816291e5",
+    "3786489d-8fea-4b02-8adf-d45ce7b71b9b",
+    "d6170783-6019-431a-805e-56377a7e8e4b",
+    "8b1f311d-3f61-43dd-8716-f943799708c5",
+    "video"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "sections": {
+    "rich_text_zmCwCE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_m6kc8G": {
+          "type": "heading",
+          "settings": { "heading": "<strong>REFUND POLICY</strong>", "heading_size": "h1" }
+        },
+        "text_9k7aB9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Thank you for shopping at <strong>Ventro</strong>. We appreciate your business and are committed to ensuring your satisfaction with our products. Please review the following refund policy carefully.</p><h3><strong>1. Eligibility for Refund:</strong></h3><p>Refund requests must be made within <strong>3 days</strong> of receiving the product.</p><p>The product must be <strong>unused</strong>, in its <strong>original condition</strong>, and must retain the <strong>blue polly seal on the magnetic strip</strong>.</p><p><strong>Engraved or customized products</strong> are <strong>non-refundable</strong>.</p><p>Items that show signs of use, have damaged packaging, or have the <strong>blue seal removed from the magnetic strip</strong> are <strong>not eligible for a refund</strong>.</p><p><strong>Accidental damages</strong> caused by customers are not eligible for refunds.</p><h3><strong>2. Refund Process:</strong></h3><p>To initiate a refund, please contact our customer service team via:</p><p><strong>Email</strong>: <a>support@ventro.shop</a></p><p><strong>Phone</strong>: <strong>01717707285</strong></p><p>Provide your <strong>order number</strong> and details of the issue when contacting us.<br/>Our team will review your request and notify you of the approval or rejection of your refund.<br/>If your refund is approved, it will be processed, and a credit will be issued to your original payment method (<strong>bKash</strong>) within <strong>3 to 5 working days</strong>.</p><h3><strong>3. Late or Missing Refunds:</strong></h3><p>If you haven’t received a refund within the specified time frame, please follow these steps:</p><p>Check your <strong>bKash account</strong> to confirm the transaction.</p><p>Contact your <strong>bKash service provider</strong> to check if the refund has been posted.</p><p>If you have done the above and still have not received your refund, please contact us at:</p><h3><strong>4. Exclusions from Refunds:</strong></h3><p>The following are <strong>non-refundable</strong>:</p><p>Products with the <strong>blue seal removed</strong> from the magnetic strip.</p><p><strong>Engraved or customized products</strong>.</p><p><strong>Accidental damages</strong> caused by customers.</p><h3><strong>5. Changes to this Refund Policy:</strong></h3><p>We reserve the right to modify this refund policy at any time. Changes and clarifications will take effect immediately upon posting on our website.</p><p>By making a purchase with Ventro, you agree to and accept the terms of this refund policy. If you have any questions or concerns, please contact us at:</p><p><strong>Email</strong>: <a>support@ventro.shop</a></p><p><strong>Phone</strong>: <strong>01717707285</strong></p><p><strong>Address</strong>: Level 10-A, House 21, Road 17, Banani, Dhaka 1213</p>"
+          }
+        },
+        "button_gyGPRJ": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": ["heading_m6kc8G", "text_9k7aB9", "button_gyGPRJ"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "main": { "type": "main-page", "disabled": true, "settings": { "padding_top": 44, "padding_bottom": 28 } },
+    "72fd851b-2799-4134-a824-d71d5201d533": {
+      "type": "featured-blog",
+      "disabled": true,
+      "settings": {
+        "heading": "Why choose Ventro?",
+        "heading_size": "h1",
+        "blog": "essential-test",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "background-1",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "35e8b75e-ed34-4fb8-a28b-1387fe2678d7": {
+      "type": "featured-blog",
+      "disabled": true,
+      "settings": {
+        "heading": "Everything you need to know about EDC gear",
+        "heading_size": "h1",
+        "blog": "news",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "background-1",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": ["rich_text_zmCwCE", "main", "72fd851b-2799-4134-a824-d71d5201d533", "35e8b75e-ed34-4fb8-a28b-1387fe2678d7"]
+}

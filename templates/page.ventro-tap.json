@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-ventro-tap",
+      "settings": {
+        "padding_top": 44,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": ["main"]
+}
