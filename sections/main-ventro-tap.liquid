@@ -31,8 +31,8 @@
     justify-content: center;
     padding-left: 2rem;
     position: absolute;
-    bottom: 20%;
-    gap: 14px;
+    bottom: 11%;
+    gap: 10px;
     width: 100%;
     border-bottom: 4px solid white;
     padding-bottom: 2rem;
@@ -45,12 +45,12 @@
 
   .card-links {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
     align-items: stretch;
     margin: 0 auto;
     position: absolute;
-    bottom: 1%;
+    bottom: 3%;
   }
 
   .card-links a {
@@ -210,8 +210,10 @@
     border-radius: 3rem;
   }
   .card-header-logo {
-    color: #070707;
+    color: #efeded;
     cursor: pointer;
+    text-align: center;
+    font-size: 16px;
   }
   .card-image-opacity {
     position: absolute;
@@ -255,7 +257,8 @@
   }
 
   .contact-info-phone,
-  .contact-info-email {
+  .contact-info-email,
+  .website-info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -273,7 +276,8 @@
     font-family: dream-avenue;
     font-size: 24px;
   }
-  .contact-info-email-details {
+  .contact-info-email-details,
+  .website-info-details {
     color: white;
     font-family: dream-avenue;
     font-size: 24px;
@@ -284,7 +288,8 @@
     font-size: 18px;
     font-weight: bold;
   }
-  .contact-info-email-details > :first-child:not(:empty) {
+  .contact-info-email-details > :first-child:not(:empty),
+  .website-info-details > :first-child:not(:empty) {
     border-bottom: 2px solid #ccc;
   }
   .save-contact-button-icon {
@@ -461,6 +466,14 @@ END:VCARD
         </div>
       `;
     };
+    const websiteTemplate = (isVisible, value) => {
+      if (!isVisible || !value) return '';
+      return `
+        <div>
+          <a href="${value}" style="color: white; text-decoration:none; line-height:1.2;">${value}</a>
+        </div>
+      `;
+    };
 
     const socialLinkTemplate = (isVisible, url, icon) => {
       if (!isVisible || !url) return '';
@@ -527,16 +540,15 @@ END:VCARD
 
 
         <div class="contact-info-phone">
-        <div class="contact-info-phone-icon">
-        {{- "icon-phone.svg" | inline_asset_content -}}
-        </div>
-        <div class="contact-info-phone-details" >
-         ${fieldTemplate(fieldIsVisible.isPhoneNumber, phoneNumber, 'phone')}
+          <div class="contact-info-phone-icon">
+          {{- "icon-phone.svg" | inline_asset_content -}}
+          </div>
+          <div class="contact-info-phone-details" >
+          ${fieldTemplate(fieldIsVisible.isPhoneNumber, phoneNumber, 'phone')}
 
-         <span class='contact-info-line'> {{- "icon-line.svg" | inline_asset_content -}}</span>
-          ${fieldTemplate(fieldIsVisible.isSecondaryPhoneNumber, secondaryPhoneNumber, 'phone')}
-        </div>
-         
+          <span class='contact-info-line'> {{- "icon-line.svg" | inline_asset_content -}}</span>
+            ${fieldTemplate(fieldIsVisible.isSecondaryPhoneNumber, secondaryPhoneNumber, 'phone')}
+          </div>
         </div>
      
 
@@ -552,6 +564,19 @@ END:VCARD
            </div>
          
         </div>
+
+         <div class="website-info">
+           <div class='website-info-icon'>
+              {{- "icon-website.svg" | inline_asset_content -}}
+           </div>
+           <div class='website-info-details'>
+            ${websiteTemplate(fieldIsVisible.isWebsite, website)}
+
+            ${websiteTemplate(fieldIsVisible.isSecondaryWebsite, secondaryWebsite)}
+           </div>
+         
+        </div>
+
         <div class='card-inforamtions-button'>
             <button id="save-contact-button">
                 <span class='save-contact-button-icon'>{{- "icon-add-user.svg" | inline_asset_content -}}</span> ADD TO CONTACTS
@@ -561,7 +586,7 @@ END:VCARD
 
           <a href="{{ routes.root_url }}" style="text-decoration: none; height: 40px;">
           <div class="card-header-logo">
-            <img src="{{- "ventro-logo.png" | asset_url -}}" alt="logo" style="height: 40px; cursor: pointer;" />
+            <p>© {{ 'now' | date: '%Y' }}, Ventro</p>
           </div>
         </a>
       </div>
