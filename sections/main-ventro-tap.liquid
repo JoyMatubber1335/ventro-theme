@@ -7,8 +7,7 @@
     padding: 20px;
     width: 100%;
     margin: auto;
-    background-color: #08537b;
-
+    background: linear-gradient(250deg, #3cccd4, #1ec6d1, #0aa4b9, #126882, #0b5e83, #156f8d, #1b8fa7);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -46,7 +45,7 @@
   .card-links {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
+    gap: 5px;
     align-items: stretch;
     margin: 0 auto;
     position: absolute;
@@ -192,7 +191,7 @@
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-right: 10px;
+    padding-right: 2rem;
   }
 
   .card-container-top {
@@ -219,10 +218,10 @@
     position: absolute;
     background: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.6) 0%,
-      /* Bottom: Highest opacity */ rgba(0, 0, 0, 0.4) 30%,
-      /* Slightly less opaque */ rgba(0, 0, 0, 0.1) 70%,
-      /* More transparent */ rgba(0, 0, 0, 0.05) 100% /* Top: Lowest opacity */
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.4) 30%,
+      rgba(0, 0, 0, 0.1) 70%,
+      rgba(0, 0, 0, 0.05) 100%
     );
     width: 100%;
     height: 100%;
@@ -263,8 +262,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-    background-color: black;
+    padding: 1rem 5rem;
+    background-color: #092729;
     color: white;
     border-radius: 3rem;
     font-size: 18px;
@@ -281,6 +280,9 @@
     color: white;
     font-family: dream-avenue;
     font-size: 24px;
+    line-break: anywhere;
+    text-align: center;
+    width: 100%;
   }
 
   .contact-info-line {
@@ -288,10 +290,7 @@
     font-size: 18px;
     font-weight: bold;
   }
-  .contact-info-email-details > :first-child:not(:empty),
-  .website-info-details > :first-child:not(:empty) {
-    border-bottom: 2px solid #ccc;
-  }
+
   .save-contact-button-icon {
     background-color: black;
     padding: 1rem;
@@ -303,13 +302,28 @@
     width: 50px;
   }
 
+  .contact-info-divider {
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    display: block !important;
+  }
+
   @media screen and (max-width: 650px) {
     .card-derails-comapny,
     .card-derails-job {
       font-size: 16px !important;
     }
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 467px) {
+    .card-details {
+      bottom: 17%;
+    }
+
+    .card-links {
+      bottom: 1%;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
     .card-derails-name {
       font-size: 36px !important;
     }
@@ -320,6 +334,19 @@
     .card-header img {
       height: 100%;
       width: 150px !important;
+    }
+    .contact-info-email-details,
+    .website-info-details,
+    .contact-info-phone-details {
+      font-size: 18px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .contact-info-phone-details {
+      flex-direction: column;
+    }
+    .contact-info-line {
+      display: none;
     }
   }
 </style>
@@ -394,8 +421,6 @@ END:VCARD
 
     const blob = new Blob([vCardContent], { type: 'text/vcard' });
     const vCardUrl = URL.createObjectURL(blob);
-
-    // Open the vCard URL to directly access contacts
     window.location.href = vCardUrl;
   }
 
@@ -482,15 +507,13 @@ END:VCARD
 
     return `
       <div class="card-container">
-       
-
-      <div class='card-container-top'>
+        <div class='card-container-top'>
           ${
             fieldIsVisible.isProfileImage && profileImage
               ? `<img src="${profileImage}" alt="Profile Image" >`
               : `<span>'{{- "icon-user.svg" | inline_asset_content -}}'</span>`
           }
-           <div class='card-image-opacity' style=''></div>
+        <div class='card-image-opacity' style=''></div>
         <div class="card-details">
               ${fieldIsVisible.isName ? `<span class='card-derails-name'>${name}</span>` : ''}
               ${fieldIsVisible.isJobTitle ? `<p class='card-derails-job' >${jobTitle}</p>` : ''}
@@ -533,49 +556,80 @@ END:VCARD
       </div>
        
       
-        <div class=card-inforamtions-bio>
-        <span > ABOUT ME </span>
-        ${fieldIsVisible.isBio ? `<span  class='card-derails-comapny-bio' >${bio}</span>` : ''}
-        </div>
+        ${
+          fieldIsVisible.isBio
+            ? `
+            <div class="card-inforamtions-bio">
+              <span>ABOUT ME</span>
+              <span class="card-derails-comapny-bio">${bio}</span>
+            </div>
+          `
+            : ''
+        }
 
 
-        <div class="contact-info-phone">
-          <div class="contact-info-phone-icon">
-          {{- "icon-phone.svg" | inline_asset_content -}}
-          </div>
-          <div class="contact-info-phone-details" >
-          ${fieldTemplate(fieldIsVisible.isPhoneNumber, phoneNumber, 'phone')}
-
-          <span class='contact-info-line'> {{- "icon-line.svg" | inline_asset_content -}}</span>
-            ${fieldTemplate(fieldIsVisible.isSecondaryPhoneNumber, secondaryPhoneNumber, 'phone')}
-          </div>
-        </div>
      
-
-        
-        <div class="contact-info-email">
-           <div class='contact-info-email-icon'>
-              {{- "icon-mailbox.svg" | inline_asset_content -}}
-           </div>
-           <div class='contact-info-email-details'>
-            ${fieldTemplate(fieldIsVisible.isEmail, email, 'email')}
-
-            ${fieldTemplate(fieldIsVisible.isSecondaryEmail, secondaryEmail, 'email')}
-           </div>
-         
+     ${
+       fieldIsVisible.isPhoneNumber || fieldIsVisible.isSecondaryPhoneNumber
+         ? `
+      <div class="contact-info-phone">
+        <div class="contact-info-phone-icon">
+          {{- "icon-phone.svg" | inline_asset_content -}}
         </div>
-
-         <div class="website-info">
-           <div class='website-info-icon'>
-              {{- "icon-website.svg" | inline_asset_content -}}
-           </div>
-           <div class='website-info-details'>
-            ${websiteTemplate(fieldIsVisible.isWebsite, website)}
-
-            ${websiteTemplate(fieldIsVisible.isSecondaryWebsite, secondaryWebsite)}
-           </div>
-         
+        <div class="contact-info-phone-details">
+          ${fieldTemplate(fieldIsVisible.isPhoneNumber, phoneNumber, 'phone')}
+          ${
+            fieldIsVisible.isSecondaryPhoneNumber && secondaryPhoneNumber && fieldIsVisible.isPhoneNumber
+              ? `<span class='contact-info-line'>{{- "icon-line.svg" | inline_asset_content -}}</span>`
+              : ''
+          }
+          ${fieldTemplate(fieldIsVisible.isSecondaryPhoneNumber, secondaryPhoneNumber, 'phone')}
         </div>
+      </div>`
+         : ''
+     }
+
+
+        ${
+          fieldIsVisible.isEmail || fieldIsVisible.isSecondaryEmail
+            ? `
+          <div class="contact-info-email">
+            <div class='contact-info-email-icon'>
+                {{- "icon-mailbox.svg" | inline_asset_content -}}
+            </div>
+            <div class='contact-info-email-details'>
+              ${fieldTemplate(fieldIsVisible.isEmail, email, 'email')}
+               ${
+                 fieldIsVisible.isSecondaryEmail && secondaryEmail && fieldIsVisible.isEmail
+                   ? `<div class='contact-info-divider'></div>`
+                   : ''
+               }
+              ${fieldTemplate(fieldIsVisible.isSecondaryEmail, secondaryEmail, 'email')}
+            </div>
+          
+          </div>`
+            : ''
+        }
+      ${
+        fieldIsVisible.isWebsite || fieldIsVisible.isSecondaryWebsite
+          ? `
+            <div class="website-info">
+              <div class='website-info-icon'>
+                  {{- "icon-website.svg" | inline_asset_content -}}
+              </div>
+              <div class='website-info-details'>
+                ${websiteTemplate(fieldIsVisible.isWebsite, website)}
+
+                ${
+                  fieldIsVisible.isWebsite && website && fieldIsVisible.isSecondaryWebsite && secondaryWebsite
+                    ? `<div class='contact-info-divider'></div>`
+                    : ''
+                }
+                ${websiteTemplate(fieldIsVisible.isSecondaryWebsite, secondaryWebsite)}
+              </div>
+            </div>`
+          : ''
+      }
 
         <div class='card-inforamtions-button'>
             <button id="save-contact-button">
@@ -603,9 +657,7 @@ END:VCARD
       })
       .then((data) => {
         if (data) {
-          // renderContent(createVisitingCardHTML(data));
           renderContent(createVisitingCardHTML(data));
-
           const saveContactButton = document.getElementById('save-contact-button');
           if (saveContactButton) {
             saveContactButton.addEventListener('click', () => {
