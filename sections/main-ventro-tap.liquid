@@ -199,7 +199,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    height: 625px;
+    height: 520px;
     position: relative;
     border-radius: 3rem;
   }
@@ -377,7 +377,6 @@
 </div>
 <script>
   function generateVCard(data) {
-    console.log('data', data);
     const {
       name,
       bio,
@@ -395,8 +394,8 @@
       twitter,
       snapchat,
       profileImage,
+      base64Image,
     } = data;
-    console.log('profileImage', profileImage);
     const vCardContent = `
 BEGIN:VCARD
 VERSION:3.0
@@ -414,7 +413,7 @@ URL;TYPE=Facebook:${facebook || ''}
 URL;TYPE=Instagram:${instagram || ''}
 URL;TYPE=Twitter:${twitter || ''}
 URL;TYPE=Snapchat:${snapchat || ''}
-PHOTO;TYPE=URL;VALUE=URI:${profileImage || ''}
+PHOTO;ENCODING=b;TYPE=${base64Image.match(/^data:(.*?);base64,/)?.[1] || 'image/png'}:${base64Image.split(',')[1]}
 NOTE;ENCODING=QUOTED-PRINTABLE;CHARSET=UTF-8:${bio || ''}
 END:VCARD
 `.trim();
@@ -557,7 +556,7 @@ END:VCARD
        
       
         ${
-          fieldIsVisible.isBio
+          fieldIsVisible.isBio && bio
             ? `
             <div class="card-inforamtions-bio">
               <span>ABOUT ME</span>
@@ -570,7 +569,7 @@ END:VCARD
 
      
      ${
-       fieldIsVisible.isPhoneNumber || fieldIsVisible.isSecondaryPhoneNumber
+       (fieldIsVisible.isPhoneNumber && phoneNumber) || (fieldIsVisible.isSecondaryPhoneNumber && secondaryPhoneNumber)
          ? `
       <div class="contact-info-phone">
         <div class="contact-info-phone-icon">
@@ -591,7 +590,7 @@ END:VCARD
 
 
         ${
-          fieldIsVisible.isEmail || fieldIsVisible.isSecondaryEmail
+          (fieldIsVisible.isEmail && email) || (fieldIsVisible.isSecondaryEmail && secondaryEmail)
             ? `
           <div class="contact-info-email">
             <div class='contact-info-email-icon'>
@@ -611,7 +610,7 @@ END:VCARD
             : ''
         }
       ${
-        fieldIsVisible.isWebsite || fieldIsVisible.isSecondaryWebsite
+        (fieldIsVisible.isWebsite && website) || (fieldIsVisible.isSecondaryWebsite && secondaryWebsite)
           ? `
             <div class="website-info">
               <div class='website-info-icon'>
@@ -648,7 +647,7 @@ END:VCARD
   }
 
   if (token) {
-    fetch(`https://nfctap.ventro.shop/api/customer/getCustomer/${token}`)
+    fetch(`https://icons-generous-implementation-strategy.trycloudflare.com/api/customer/getCustomer/${token}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch data.');
