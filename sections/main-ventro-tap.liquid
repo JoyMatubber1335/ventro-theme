@@ -311,6 +311,24 @@
     display: block !important;
   }
 
+  #typing-job-title {
+    display: inline-block;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    white-space: nowrap;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
   @media screen and (max-width: 650px) {
     .card-derails-comapny,
     .card-derails-job {
@@ -350,25 +368,6 @@
     }
     .contact-info-line {
       display: none;
-    }
-  }
-
-  /* Job title animation style */
-  #typing-job-title {
-    display: inline-block;
-    font-size: inherit;
-    font-family: inherit;
-    color: inherit;
-    white-space: nowrap;
-  }
-
-  @keyframes blink {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
     }
   }
 </style>
@@ -534,7 +533,6 @@ END:VCARD
       if (!isVisible || !url) return '';
       return `<a href="${url}" target="_blank">${icon}</a>`;
     };
-
     const jobTitleContainer = `
       <div class="card-derails-job">
         <span id="typing-job-title"></span>
@@ -699,7 +697,7 @@ END:VCARD
     type();
   }
   if (token) {
-    fetch(`https://cab-touch-ebook-shake.trycloudflare.com/api/customer/getCustomer/${token}`)
+    fetch(`https://nfctap.ventro.shop/api/customer/getCustomer/${token}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch data.');
