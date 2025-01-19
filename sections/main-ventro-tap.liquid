@@ -182,16 +182,17 @@
     border-radius: 5rem;
     font-size: 20px;
     cursor: pointer;
-    height: 60px;
-    min-width: 50%;
+    /* height: 60px; */
+    /* min-width: 50%; */
     font-size: 20px;
     display: flex;
     gap: 1rem;
-    justify-content: center;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-right: 2rem;
+    width: 275px;
+    padding-left: 5px;
   }
 
   .card-container-top {
@@ -262,7 +263,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem 5rem;
+    padding: 1.5rem 5rem;
     background-color: #092729;
     color: white;
     border-radius: 3rem;
@@ -274,6 +275,7 @@
     color: white;
     font-family: dream-avenue;
     font-size: 24px;
+    align-items: center;
   }
   .contact-info-email-details,
   .website-info-details {
@@ -289,6 +291,7 @@
     color: #999;
     font-size: 18px;
     font-weight: bold;
+    display: flex;
   }
 
   .save-contact-button-icon {
@@ -316,11 +319,11 @@
   }
   @media screen and (max-width: 467px) {
     .card-details {
-      bottom: 17%;
+      bottom: 20%;
     }
 
     .card-links {
-      bottom: 1%;
+      bottom: 2%;
       grid-template-columns: repeat(6, 1fr);
     }
 
@@ -347,6 +350,25 @@
     }
     .contact-info-line {
       display: none;
+    }
+  }
+
+  /* Job title animation style */
+  #typing-job-title {
+    display: inline-block;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    white-space: nowrap;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
     }
   }
 </style>
@@ -393,28 +415,37 @@
       instagram,
       twitter,
       snapchat,
-      profileImage,
+      tiktok,
       base64Image,
+      fieldIsVisible,
     } = data;
+    console.log('snapchat', fieldIsVisible.isSnapchat);
     const vCardContent = `
 BEGIN:VCARD
 VERSION:3.0
-FN:${name || ''}
-TITLE:${jobTitle || ''}
-ORG:${company || ''}
-EMAIL;TYPE=INTERNET:${email || ''}
-EMAIL;TYPE=INTERNET:${secondaryEmail || ''}
-TEL;TYPE=CELL:${phoneNumber || ''}
-TEL;TYPE=CELL:${secondaryPhoneNumber || ''}
-URL;TYPE=Website:${website || ''}
-URL;TYPE=Website:${secondaryWebsite || ''}
-URL;TYPE=LinkedIn:${linkedin || ''}
-URL;TYPE=Facebook:${facebook || ''}
-URL;TYPE=Instagram:${instagram || ''}
-URL;TYPE=Twitter:${twitter || ''}
-URL;TYPE=Snapchat:${snapchat || ''}
-PHOTO;ENCODING=b;TYPE=${base64Image.match(/^data:(.*?);base64,/)?.[1] || 'image/png'}:${base64Image.split(',')[1]}
-NOTE;ENCODING=QUOTED-PRINTABLE;CHARSET=UTF-8:${bio || ''}
+${fieldIsVisible.isName && name ? `FN:${name}` : ''}
+${fieldIsVisible.isBio && bio ? `NOTE:${bio}` : ''}
+${fieldIsVisible.isJobTitle && jobTitle ? `TITLE:${jobTitle}` : ''}
+${fieldIsVisible.isCompany && company ? `ORG:${company}` : ''}
+${fieldIsVisible.isEmail && email ? `EMAIL;TYPE=INTERNET:${email}` : ''}
+${fieldIsVisible.isEmail && secondaryEmail ? `EMAIL;TYPE=INTERNET:${secondaryEmail}` : ''}
+${fieldIsVisible.isPhoneNumber && phoneNumber ? `TEL;TYPE=CELL:${phoneNumber}` : ''}
+${fieldIsVisible.isSecondaryPhoneNumber && secondaryPhoneNumber ? `TEL;TYPE=CELL:${secondaryPhoneNumber}` : ''}
+${fieldIsVisible.isWebsite && website ? `URL;TYPE=Website:${website}` : ''}
+${fieldIsVisible.isSecondaryWebsite && secondaryWebsite ? `URL;TYPE=Website:${secondaryWebsite}` : ''}
+${fieldIsVisible.isLinkedin && linkedin ? `URL;TYPE=LinkedIn:${linkedin}` : ''}
+${fieldIsVisible.isFacebook && facebook ? `URL;TYPE=Facebook:${facebook}` : ''}
+${fieldIsVisible.isInstagram && instagram ? `URL;TYPE=Instagram:${instagram}` : ''}
+${fieldIsVisible.isTwitter && twitter ? `URL;TYPE=Twitter:${twitter}` : ''}
+${fieldIsVisible.isTiktok && tiktok ? `URL;TYPE=Tiktok:${tiktok}` : ''}
+${fieldIsVisible.isSnapchat && snapchat ? `URL;TYPE=Snapchat:${snapchat}` : ''}
+${
+  fieldIsVisible.isProfileImage && base64Image
+    ? `PHOTO;ENCODING=b;TYPE=${base64Image.match(/^data:(.*?);base64,/)?.[1] || 'image/png'}:${
+        base64Image.split(',')[1]
+      }`
+    : ''
+}
 END:VCARD
 `.trim();
 
@@ -504,6 +535,12 @@ END:VCARD
       return `<a href="${url}" target="_blank">${icon}</a>`;
     };
 
+    const jobTitleContainer = `
+      <div class="card-derails-job">
+        <span id="typing-job-title"></span>
+      </div>
+    `;
+
     return `
       <div class="card-container">
         <div class='card-container-top'>
@@ -515,7 +552,9 @@ END:VCARD
         <div class='card-image-opacity' style=''></div>
         <div class="card-details">
               ${fieldIsVisible.isName ? `<span class='card-derails-name'>${name}</span>` : ''}
-              ${fieldIsVisible.isJobTitle ? `<p class='card-derails-job' >${jobTitle}</p>` : ''}
+              <div class='card-derails-job'>
+               ${fieldIsVisible.isJobTitle ? jobTitleContainer : ''}
+              </div>
               ${fieldIsVisible.isCompany ? `<p  class='card-derails-comapny' >${company}</p>` : ''}
         </div>
         <div class="card-links">
@@ -645,9 +684,22 @@ END:VCARD
       </div>
     `;
   }
+  function typeEffect(elementId, text, speed) {
+    const element = document.getElementById(elementId);
+    let i = 0;
 
+    function type() {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+
+    type();
+  }
   if (token) {
-    fetch(`https://icons-generous-implementation-strategy.trycloudflare.com/api/customer/getCustomer/${token}`)
+    fetch(`https://cab-touch-ebook-shake.trycloudflare.com/api/customer/getCustomer/${token}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch data.');
@@ -656,12 +708,18 @@ END:VCARD
       })
       .then((data) => {
         if (data) {
+          console.log('data for response', data);
           renderContent(createVisitingCardHTML(data));
           const saveContactButton = document.getElementById('save-contact-button');
           if (saveContactButton) {
             saveContactButton.addEventListener('click', () => {
               generateVCard(data);
             });
+          }
+          if (data?.fieldIsVisible.isJobTitle && data?.jobTitle) {
+            setTimeout(() => {
+              typeEffect('typing-job-title', data?.jobTitle, 100);
+            }, 500);
           }
         } else {
           renderContent(createErrorHTML('Sorry, the visiting card could not be found.'));
