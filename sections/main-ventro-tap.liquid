@@ -4,13 +4,13 @@
     margin: 0 auto;
   }
   .card-container {
-    padding: 20px;
+    padding: 1rem;
     width: 100%;
     margin: auto;
     background: linear-gradient(250deg, #3cccd4, #1ec6d1, #0aa4b9, #126882, #0b5e83, #156f8d, #1b8fa7);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     height: 100%;
   }
   .card-header {
@@ -29,12 +29,19 @@
     padding: 1rem;
     justify-content: center;
     padding-left: 2rem;
-    position: absolute;
-    bottom: 11%;
     gap: 10px;
     width: 100%;
     border-bottom: 4px solid white;
     padding-bottom: 2rem;
+  }
+
+  .card-details-with-link {
+    bottom: 3% !important;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
   }
   .card-details span,
   .card-details p {
@@ -43,13 +50,15 @@
   }
 
   .card-links {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    display: flex;
     gap: 5px;
     align-items: stretch;
     margin: 0 auto;
-    position: absolute;
-    bottom: 3%;
+    flex-wrap: wrap;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .card-links a {
@@ -159,9 +168,14 @@
   }
   .card-derails-comapny,
   .card-derails-job {
-    font-size: 16px !important;
     color: white !important;
     line-height: 1.2 !important;
+  }
+  .card-derails-job {
+    font-size: 24px;
+  }
+  .card-derails-comapny {
+    font-size: 16px;
   }
 
   .card-inforamtions-button {
@@ -202,12 +216,13 @@
     align-items: center;
     height: 520px;
     position: relative;
-    border-radius: 3rem;
+    border-radius: 2rem;
   }
   .card-container-top img {
     height: 100%;
     width: 100%;
-    border-radius: 3rem;
+    border-radius: 2rem;
+    object-fit: cover;
   }
   .card-header-logo {
     color: #efeded;
@@ -228,7 +243,7 @@
     height: 100%;
     display: block !important;
     bottom: 0;
-    border-radius: 3rem;
+    border-radius: 2rem;
   }
   .card-derails-name,
   .card-derails-job,
@@ -244,10 +259,11 @@
     text-align: center;
     background-color: black;
     color: white;
-    border-radius: 3rem;
+    border-radius: 1rem;
     padding: 1.5rem;
     font-size: 18px;
     gap: 10px;
+    align-items: center;
   }
 
   .card-derails-comapny-bio {
@@ -264,9 +280,9 @@
     align-items: center;
     justify-content: center;
     padding: 1.5rem 5rem;
-    background-color: #092729;
+    background-color: black;
     color: white;
-    border-radius: 3rem;
+    border-radius: 1rem;
     font-size: 18px;
   }
 
@@ -316,7 +332,7 @@
     font-size: inherit;
     font-family: inherit;
     color: inherit;
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
 
   @keyframes blink {
@@ -330,27 +346,18 @@
   }
 
   @media screen and (max-width: 650px) {
-    .card-derails-comapny,
     .card-derails-job {
+      font-size: 20px !important;
+    }
+    .card-derails-comapny {
       font-size: 16px !important;
     }
   }
   @media screen and (max-width: 467px) {
-    .card-details {
-      bottom: 20%;
-    }
-
-    .card-links {
-      bottom: 2%;
-      grid-template-columns: repeat(6, 1fr);
-    }
+    
 
     .card-derails-name {
       font-size: 36px !important;
-    }
-    .card-derails-comapny,
-    .card-derails-job {
-      font-size: 16px !important;
     }
     .card-header img {
       height: 100%;
@@ -362,6 +369,7 @@
       font-size: 18px;
     }
   }
+
   @media screen and (max-width: 320px) {
     .contact-info-phone-details {
       flex-direction: column;
@@ -418,10 +426,16 @@
       base64Image,
       fieldIsVisible,
     } = data;
-    console.log('snapchat', fieldIsVisible.isSnapchat);
+
+    // Extract first and last name
+    const firstName = name.split(' ').slice(0, -1).join(' ');
+    const lastName = name.split(' ').slice(-1).join(' ');
+
+    // Build vCard content
     const vCardContent = `
 BEGIN:VCARD
 VERSION:3.0
+${fieldIsVisible.isName ? `N:${lastName};${firstName};;` : ''}
 ${fieldIsVisible.isName && name ? `FN:${name}` : ''}
 ${fieldIsVisible.isBio && bio ? `NOTE:${bio}` : ''}
 ${fieldIsVisible.isJobTitle && jobTitle ? `TITLE:${jobTitle}` : ''}
@@ -448,9 +462,13 @@ ${
 END:VCARD
 `.trim();
 
-    const blob = new Blob([vCardContent], { type: 'text/vcard' });
-    const vCardUrl = URL.createObjectURL(blob);
-    window.location.href = vCardUrl;
+    const blob = new Blob([vCardContent], { type: 'text/x-vcard' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `${firstName || 'contact'}.vcf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
   function getQueryParam() {
@@ -501,6 +519,7 @@ END:VCARD
       fieldIsVisible,
       isActive,
     } = data;
+
     if (!isActive) {
       return `
       <div class="card-container">
@@ -538,6 +557,21 @@ END:VCARD
         <span id="typing-job-title"></span>
       </div>
     `;
+    const fields = [
+      fieldIsVisible.isWebsite && website,
+      fieldIsVisible.isSecondaryWebsite && secondaryWebsite,
+      fieldIsVisible.isLinkedin && linkedin,
+      fieldIsVisible.isFacebook && facebook,
+      fieldIsVisible.isInstagram && instagram,
+      fieldIsVisible.isTiktok && tiktok,
+      fieldIsVisible.isTwitter && twitter,
+      fieldIsVisible.isSnapchat && snapchat,
+    ];
+
+    // Count the number of fields that are visible and have values
+    const fieldCount = fields.filter((field) => field).length;
+    console.log('fieldCount', fieldCount);
+    const fieldCountClass = fieldCount <= 4 ? 'field-count-min' : 'field-count-max';
 
     return `
       <div class="card-container">
@@ -548,6 +582,7 @@ END:VCARD
               : `<span>'{{- "icon-user.svg" | inline_asset_content -}}'</span>`
           }
         <div class='card-image-opacity' style=''></div>
+      <div class='card-details-with-link'>
         <div class="card-details">
               ${fieldIsVisible.isName ? `<span class='card-derails-name'>${name}</span>` : ''}
               <div class='card-derails-job'>
@@ -555,7 +590,7 @@ END:VCARD
               </div>
               ${fieldIsVisible.isCompany ? `<p  class='card-derails-comapny' >${company}</p>` : ''}
         </div>
-        <div class="card-links">
+        <div class="card-links ">
           ${socialLinkTemplate(fieldIsVisible.isWebsite, website, '{{- "icon-website.svg" | inline_asset_content -}}')}
           ${socialLinkTemplate(
             fieldIsVisible.isSecondaryWebsite,
@@ -588,7 +623,8 @@ END:VCARD
             snapchat,
             '{{- "icon-snapchat-2.svg" | inline_asset_content -}}'
           )}
-        </div>
+        </div></div>
+        
       </div>
        
       
@@ -596,7 +632,7 @@ END:VCARD
           fieldIsVisible.isBio && bio
             ? `
             <div class="card-inforamtions-bio">
-              <span>ABOUT ME</span>
+               {{- "icon-user-2.svg" | inline_asset_content -}}
               <span class="card-derails-comapny-bio">${bio}</span>
             </div>
           `
