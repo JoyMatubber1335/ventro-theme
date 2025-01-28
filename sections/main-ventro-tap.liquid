@@ -501,7 +501,7 @@ END:VCARD
   function createErrorHTML(message, iconUrl) {
     return `
       <div class="card-container">
-          <video autoplay loop  muted class="background-video" >
+          <video autoplay loop  muted playsinline class="background-video" >
             <source src="https://ventro-box-tap.s3.ap-south-1.amazonaws.com/uploads/ventro+background+video.mp4" type="video/mp4" />
           </video>
         <div class="error-container">
@@ -540,7 +540,7 @@ END:VCARD
     if (!isActive) {
       return `
       <div class="card-container">
-        <video autoplay loop muted class="background-video" >
+        <video autoplay loop muted playsinline class="background-video" >
             <source src="https://ventro-box-tap.s3.ap-south-1.amazonaws.com/uploads/ventro+background+video.mp4" type="video/mp4" />
         </video>
         <div class="error-container">
@@ -596,7 +596,7 @@ END:VCARD
 
     return `
       <div class="card-container">
-      <video autoplay loop  muted  class="background-video">
+      <video autoplay loop  muted playsinline  class="background-video">
         <source src="https://ventro-box-tap.s3.ap-south-1.amazonaws.com/uploads/ventro+background+video.mp4" type="video/mp4" />
       </video>
         <div class='card-container-top'>
